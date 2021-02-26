@@ -1,9 +1,10 @@
 spring:
   application:
     name: eureka
+  profiles:
+    active: development
   cloud:
     config:
       uri: http://localhost:8888
-      discovery:
-        enabled: true
       enabled: true
+      fail-fast: true

@@ -1,0 +1,40 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13.0-alpine
+    restart: always
+    environment:
+      - "POSTGRES_USER=admin"
+      - "POSTGRES_PASSWORD=admin"
+      - "POSTGRES_DB=gogs"
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    networks:
+      - gogs
+
+  gogs:
+    image: gogs/gogs:latest
+    restart: always
+    ports:
+      - "10022:22"
+      - "10080:3000"
+    links:
+      - postgres
+    environment:
+      - "RUN_CROND=true"
+    networks:
+      - gogs
+    volumes:
+      - "gogs-data:/data"
+    depends_on:
+      - postgres
+
+networks:
+  gogs:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
+  gogs-data:
+    driver: local

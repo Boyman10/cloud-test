@@ -2,3 +2,4 @@
 *.iml
 config-repo/data
 .mvn
+target

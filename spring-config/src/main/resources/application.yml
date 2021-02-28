@@ -8,3 +8,4 @@ spring:
       server:
         git:
           uri: http://localhost:10080/test/cloud-config.git
+          searchPaths: '{application}/{profile}'

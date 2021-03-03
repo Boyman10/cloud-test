@@ -1,5 +1,5 @@
 .idea
 *.iml
-config-repo/data
+.git
 .mvn
 target

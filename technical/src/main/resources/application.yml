@@ -1,0 +1,9 @@
+keycloak:
+  realm: TEST
+  auth-server-url: http://localhost:8090/auth
+  ssl-required: external
+  resource: micro-app
+  credentials:
+    secret: d7ed485e-08f5-410e-a42e-3aec87cf9085
+  use-resource-role-mappings: true
+  bearer-only: true

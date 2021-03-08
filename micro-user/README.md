@@ -11,4 +11,10 @@ the time they try to login they will need to set credentials.
 
 # Keycloak SYNC
 
+# User rights
 
+An admin can list all users belonging to same company.
+
+# Endpoints test
+
+curl http://localhost:9001/users

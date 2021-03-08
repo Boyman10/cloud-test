@@ -23,6 +23,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/users")
+    @RolesAllowed("superadmin")
     public List<User> getAll() {
         return this.userRepository.findAll();
     }

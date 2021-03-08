@@ -17,4 +17,10 @@ An admin can list all users belonging to same company.
 
 # Endpoints test
 
-curl http://localhost:9001/users
+> curl http://localhost:9001/users
+
+With authentication :
+
+> curl --location --request GET 'http://localhost:9001/users' \
+--header 'Authorization: Bearer eyJhbGcqdfljdqlhflhfds...'
+

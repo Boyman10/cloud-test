@@ -1,4 +1,4 @@
-package com.example.user.config;
+package com.example.user.config.filters;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

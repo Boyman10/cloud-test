@@ -18,4 +18,3 @@ annotations @Configuration, @EnableAutoConfiguration, and@ComponentScan with the
 
 @Import(KeycloakSecurityConfig.class)
 worked but should find a better way => 
-

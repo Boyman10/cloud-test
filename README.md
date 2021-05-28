@@ -9,6 +9,9 @@ CLOUD TEST - MICRO SERVICES & SPRING
 
 - Angular App for front end
 
+Be careful when upgrading version of Spring boot & Spring Cloud. They should be compatible with each other. Make sure to
+load the proper repositories as well [see here](https://www.baeldung.com/spring-maven-repository).
+
 # Frontend Client
 
 See [Cloud Test Cli repository](https://github.com/Boyman10/cloud-test-cli) for more details.
@@ -25,7 +28,7 @@ Use docker compose to use it along with postgres for production.
 
 **Keycloak adapter for development :**
 
-We use TEST realm and micro-app client - Check
+We use TEST realm and micro-app client
 
 Check the technical module for more details (application.yml).
 
@@ -35,7 +38,7 @@ Check the technical module for more details (application.yml).
 
 2. Start Spring config service
 
-   ./mvnw spring-boot:run -pl config-service
+   ./mvnw spring-boot:run -pl spring-config
 
    run on port 8888
 
@@ -50,8 +53,13 @@ Check the technical module for more details (application.yml).
 
    ./mvnw spring-boot:run -pl gateway run on port 8000
 
-5. Start micro user DB (docker-compose)
-6. Start micro user service
-7. Start spring admin interface
 
-# Testing the authentication
+5. Start micro user DB (docker-compose)
+
+6. Start micro user service
+
+   ./mvnw spring-boot:run -pl micro-user run on port 9001
+
+   http://localhost:9001/actuator
+
+7. Start spring admin interface

@@ -25,7 +25,17 @@ An admin user can register a company with its details. By default a journal will
 
 An admin can list all users belonging to same company.
 
-# Endpoints test
+# Endpoints tests
+
+*You might disable spring security in order to test the api independantly*
+
+Within UserApplication :
+
+@ComponentScan(basePackages = {"com.example.user"})
+//@ComponentScan(basePackages = {"com.example.user", "com.example.config"})
+//@EnableEurekaClient
+
+
 
 > curl http://localhost:9001/users
 

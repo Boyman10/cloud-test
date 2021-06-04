@@ -3,7 +3,7 @@ package com.example.user.model.entities;
 import javax.persistence.*;
 import java.security.Principal;
 import java.time.ZonedDateTime;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "`micro_user`")
@@ -18,8 +18,12 @@ public class User implements Principal {
     public String lastName;
     public ZonedDateTime createdAt;
 
-    @OneToMany
-    public List<Company> companies;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "user_companies",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "company_id"))
+    public Set<Company> companies;
 
     @Override
     public String getName() {

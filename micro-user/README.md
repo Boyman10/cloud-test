@@ -5,6 +5,8 @@ This micro application is synchronizing users with keycloak but also manage comp
 
 You will need a keycloak instance as well as the following services up and running :
 
+- eureka
+- keycloak
 - spring-config
 - user db
 
@@ -27,21 +29,11 @@ An admin can list all users belonging to same company.
 
 # Endpoints tests
 
-*You might disable spring security in order to test the api independantly*
-
-Within UserApplication :
-
-@ComponentScan(basePackages = {"com.example.user"})
-//@ComponentScan(basePackages = {"com.example.user", "com.example.config"})
-//@EnableEurekaClient
-
-
-
 > curl http://localhost:9001/users
 
 Without an access token you won't be able to access the route.
 
-## Generate an access token
+## Generate access token
 
 curl --location --request POST 'http://localhost:8090/auth/realms/TEST/protocol/openid-connect/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \

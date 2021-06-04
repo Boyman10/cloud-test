@@ -23,7 +23,7 @@ public class CompanyController {
     }
 
     @GetMapping(value = "/companies")
-    @RolesAllowed("user")
+    @RolesAllowed({"user", "superadmin"})
     public List<Company> getAll() {
         return this.companyRepository.findAll();
     }

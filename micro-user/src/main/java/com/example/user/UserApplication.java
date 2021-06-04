@@ -2,14 +2,14 @@ package com.example.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = {"com.example.user"})
-//@ComponentScan(basePackages = {"com.example.user", "com.example.config"})
+@ComponentScan(basePackages = {"com.example.user", "com.example.config"})
 @EnableAutoConfiguration
-//@EnableEurekaClient
+@EnableEurekaClient
 //@Import(KeycloakSecurityConfig.class)
 public class UserApplication {
 

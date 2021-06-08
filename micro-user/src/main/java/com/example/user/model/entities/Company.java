@@ -14,7 +14,7 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
-    @NotBlank
+    @NotBlank(message = "Identificcation is mandatory")
     public String identification;
     @NotBlank
     public String name;

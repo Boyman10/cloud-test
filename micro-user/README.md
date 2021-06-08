@@ -5,9 +5,10 @@ This micro application is synchronizing users with keycloak but also manage comp
 
 You will need a keycloak instance as well as the following services up and running :
 
+- git server (config-repo)
+- spring-config
 - eureka
 - keycloak
-- spring-config
 - user db
 
 # Use cases

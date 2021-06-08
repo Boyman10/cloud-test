@@ -1,23 +1,24 @@
 package com.example.user.model.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
 @Entity
+@Table(name = "`micro_company`")
 public class Company {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
     @NotBlank
     public String identification;
     @NotBlank
     public String name;
+    @CreatedDate
     public ZonedDateTime createdAt;
 
     @ManyToMany(mappedBy = "companies")

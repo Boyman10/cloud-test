@@ -17,10 +17,14 @@ A user may register onto Keycloak to get an admin role.
 
 That user will then be synchronized with the micro app from which additional users can be registered under a company.
 
-Those additional users will be synchronized with keycloak and the time they try to login they will need to set their
+Those additional users will be synchronized with Keycloak by the time they try to log in they will need to set their
 credentials.
 
-An admin user can register a company with its details. By default a journal will be linked to the company.
+An admin user can register a company with its details.
+
+User can be added along with companies. Companies can be linked to users.
+
+By default, a journal will be linked to the company.
 
 # Keycloak SYNC
 
